@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EJS Engine</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Item Name</b></td>
+            <td colspan="2"><b>Action</b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < itms.length; i++) { %>
+          <tr>
+            <td><%= itms[i].item %></td>
+            <td><a href="/items/edit/<%= itms[i]._id %>" class="btn btn-primary">Edit</a></td>
+            <td><a href="/items/delete/<%= itms[i]._id %>" class="btn btn-danger">Delete</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
